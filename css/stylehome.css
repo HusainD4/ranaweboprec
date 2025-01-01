@@ -1,0 +1,225 @@
+/* Global Styles */
+body {
+    background-color: #d4e9ff;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #2d3741; /* Warna biru untuk navbar */
+}
+
+.navbar .navbar-brand img {
+    max-width: 120px;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(255, 255, 255) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0080ff !important;
+}
+
+/* Section Styling */
+.section h2, .section h3 {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.section p {
+    color: #555;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #004d99;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2f8b0a;
+}
+
+.btn-danger {
+    background-color: #e1306c;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c13584;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Divisi and Jobdesk */
+.list-group-item {
+    font-size: 16px;
+}
+
+.list-group-item i {
+    margin-right: 10px;
+}
+
+.list-group-item strong {
+    font-weight: bold;
+}
+
+/* Galeri */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact & Instagram Button */
+.btn i {
+    margin-right: 8px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2d3741;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #f8f9fa;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        max-width: 100px;
+    }
+
+    .section h2, .section h3 {
+        font-size: 22px;
+    }
+
+    .list-group-item {
+        font-size: 14px;
+    }
+}
+
+/* Styling tabel */
+.table {
+    background-color: #ffffff00; /* Latar belakang hitam untuk tabel */
+    color: rgb(0, 0, 0); /* Warna teks putih */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #006eff;
+    color: white;
+    border: 1px solid #000000;
+    text-align: center; /* Latar belakang lebih gelap untuk header tabel */
+}
+
+.table td {
+    border: 1px solid #000000; /* Border dengan warna abu-abu gelap */
+}
+
+.table tr:nth-child(even) {
+    background-color: #55555500; /* Latar belakang berbeda untuk baris genap */
+}
+
+.table tr:hover {
+    background-color: #448fff49; /* Warna latar belakang ketika baris dihover */
+}
+
+.table i {
+    margin-right: 10px; /* Memberikan sedikit jarak antara ikon dan teks */
+}
+
+
+
+
+
+.content {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Styling untuk notifikasi */
+.notification {
+    position: fixed;
+    top: 50%; /* Menempatkan notifikasi di tengah layar secara vertikal */
+    left: 50%; /* Menempatkan notifikasi di tengah layar secara horizontal */
+    transform: translate(-50%, -50%); /* Menggeser notifikasi ke tengah */
+    background-color: #ff9800; /* Warna latar belakang notifikasi */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: none; /* Notifikasi disembunyikan awalnya */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notification p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.notification button {
+    background-color: #ffffff;
+    color: #ff9800;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.notification button:hover {
+    background-color: #ffcc80;
+}

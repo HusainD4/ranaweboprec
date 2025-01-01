@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Halaman Pendaftaran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylependaftaran.css"> <!-- Link ke file CSS eksternal -->
+</head>
+
+<body>
+    <header>
+        <img src="images/LogoRana.png" alt="Logo" class="logo">
+    </header>
+
+    <div>
+        <h1>HALAMAN Pendaftaran</h1>
+    </div>
+    
+    
+
+    <div class="container">
+        <!-- Penjelasan Divisi dan Jobdesk -->
+<div class="section mb-5">
+    <h2>Divisi dan Jobdesk</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Divisi</th>
+                <th>Jobdesk</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><i class="fas fa-file-alt"></i> <strong>Sekretaris</strong></td>
+                <td>Bertanggung jawab dalam pengelolaan administrasi dan surat menyurat.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-wallet"></i> <strong>Bendahara</strong></td>
+                <td>Mengelola keuangan UKM.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-camera"></i> <strong>Dokumentasi</strong></td>
+                <td>Mengambil foto dan video untuk dokumentasi kegiatan.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-chalkboard-teacher"></i> <strong>Pendidikan</strong></td>
+                <td>Mengatur dan melaksanakan kegiatan pelatihan dan pembelajaran.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-briefcase"></i> <strong>KWU</strong></td>
+                <td>Mengelola kegiatan kewirausahaan dan bisnis di UKM.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-share-alt"></i> <strong>Publikasi</strong></td>
+                <td>Mengelola media sosial dan publikasi informasi kegiatan UKM.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-cogs"></i> <strong>Perkap (Koordinator Alat dan Properti)</strong></td>
+                <td>Mengatur dan memastikan peralatan serta properti tersedia dengan baik.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-users"></i> <strong>Humas Eksternal</strong></td>
+                <td>Menjalin hubungan dengan pihak luar dan komunitas eksternal.</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-users-cog"></i> <strong>Humas Internal</strong></td>
+                <td>Mengelola hubungan antar anggota UKM dan internal organisasi.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+        <h2>Silakan isi formulir di bawah ini untuk mendaftar:</h2>
+        <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSce-xaoJoSuSJ7CaWJ2ynxMuzXsWhMuCt1nwSWSJ8xTq9xcZw/viewform?embedded=true"></iframe>
+    </div>
+
+    <footer>
+        <p>© 2025 Pendaftaran UKM - <a href="index.html">UKM RANA 9</a></p>
+    </footer>
+    <script>
+                // Mengalihkan pengguna ke URL tanpa ekstensi .html
+                if (window.location.pathname.endsWith('.html')) {
+        var newUrl = window.location.pathname.replace('.html', '');
+        window.history.replaceState(null, null, newUrl);  // Mengganti URL tanpa refresh halaman
+        }
+    </script>
+</body>
+
+</html>
