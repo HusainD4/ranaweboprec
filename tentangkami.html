@@ -7,6 +7,125 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tentang Kami - UKM Rana 9</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Gaya untuk box media sosial dan informasi */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .box p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        /* Gaya untuk tombol */
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .info-box {
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .info-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .info-box a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .info-box a:hover {
+            color: #0056b3;
+        }
+
+        /* Menambahkan elemen credits */
+        .credits {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .credits a {
+            font-weight: normal;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .credits a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +133,7 @@
     <header>
         <div class="logo-container">
             <a href="index.html">
-                <img src="images/LogoRana.png" alt="Logo UKM Rana 9" class="logo">
+                <img src="images/LogoRanaW.png" alt="Logo UKM Rana 9" class="logo">
             </a>
         </div>
     </header>
@@ -23,47 +142,46 @@
     <section class="about-us">
         <div class="container">
             <h1>Tentang UKM Rana 9</h1>
-            <p>UKM Rana 9 adalah Unit Kegiatan Mahasiswa yang bergerak dalam bidang seni dan kreativitas di kampus
-                kami. Kami berkomitmen untuk memberikan wadah bagi mahasiswa yang memiliki bakat dan minat di bidang
-                seni, musik, teater, dan berbagai kegiatan kreatif lainnya.</p>
+            <p>UKM Rana 9 adalah Unit Kegiatan Mahasiswa yang bergerak dalam bidang seni dan kreativitas di kampus kami. Kami berkomitmen untuk memberikan wadah bagi mahasiswa yang memiliki bakat dan minat di bidang seni, musik, teater, dan berbagai kegiatan kreatif lainnya.</p>
+            
+            <!-- Box Ringkasan Informasi dan Media Sosial -->
+            <div class="box-container">
+                <!-- Box Ringkasan Informasi -->
+                <div class="box">
+                    <h3>Ringkasan Informasi</h3>
+                    <p>Lokasi: Kampus Politeknik Harapan Bersama Tegal</p>
+                    <p>Email: - </p>
+                    <p>No. Telepon: -</p>
+                </div>
 
-            <!-- <h2>Visi</h2>
-            <p>Menjadi UKM yang inovatif dan berkembang, memberikan kontribusi positif bagi kampus dan masyarakat
-                melalui karya-karya kreatif yang dapat meningkatkan potensi mahasiswa.</p>
-
-            <h2>Misi</h2>
-            <ul>
-                <li>Menyediakan ruang bagi mahasiswa untuk berkarya di bidang seni dan kreativitas.</li>
-                <li>Mendukung mahasiswa dalam mengembangkan kemampuan diri dan soft skills.</li>
-                <li>Menjalin kerja sama dengan berbagai pihak untuk memperluas jaringan dan peluang bagi anggota UKM.</li>
-            </ul>
-
-            <h2>Sejarah</h2>
-            <p>UKM Rana 9 didirikan pada tahun 2010 dengan tujuan untuk mengumpulkan mahasiswa yang memiliki minat
-                dalam berbagai jenis seni. Seiring berjalannya waktu, kami terus berkembang dan sekarang memiliki
-                berbagai program kegiatan yang mencakup pertunjukan seni, pameran, dan kegiatan sosial di luar kampus.</p>
-
-            <h2>Kontak Kami</h2>
-            <p>Jika Anda tertarik untuk bergabung atau ingin mengetahui lebih lanjut tentang UKM Rana 9, silakan
-                menghubungi kami:</p>
-            <ul>
-                <li>Email: rana9@example.com</li>
-                <li>Instagram: @UKMRana9</li>
-                <li>Telepon: +62 812-3456-7890</li>
-            </ul> -->
+                <!-- Box Media Sosial -->
+                <div class="box">
+                    <h3>Ikuti Kami di Media Sosial</h3>
+                    <div class="social-icons">
+                        <a href="galatsistem.html" ><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/rana9_kmharber" ><i class="fab fa-instagram"></i></a>
+                        <a href="galatsistem.html" ><i class="fab fa-twitter"></i></a>
+                        <a href="galatsistem.html" ><i class="fab fa-youtube"></i></a>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <!-- <footer>
-        <p>&copy; 2025 UKM Rana 9 | Semua hak cipta dilindungi</p>
-        <p><a href=".html">Kebijakan Privasi</a> | <a href="syarat.html">Syarat dan Ketentuan</a></p>
-    </footer> -->
+    <!-- Credits -->
+    <section class="about-us">
+        <div class="box">
+            <div class="credits" style="justify-items: center;">
+                <p>Design & Development by <a href="https://www.instagram.com/si.husen/" >Si.Husen</a>, <a href="https://www.instagram.com/rana9_kmharber/" >RANA9_KMHARBER</a></p>
+            </div>
+        </div>
+    </section>
     <script>
-                // Mengalihkan pengguna ke URL tanpa ekstensi .html
-                if (window.location.pathname.endsWith('.html')) {
-        var newUrl = window.location.pathname.replace('.html', '');
-        window.history.replaceState(null, null, newUrl);  // Mengganti URL tanpa refresh halaman
+        // Mengalihkan pengguna ke URL tanpa ekstensi .html
+        if (window.location.pathname.endsWith('.html')) {
+            var newUrl = window.location.pathname.replace('.html', '');
+            window.history.replaceState(null, null, newUrl); // Mengganti URL tanpa refresh halaman
         }
     </script>
 </body>

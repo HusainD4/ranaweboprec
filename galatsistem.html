@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi Pengembangan</title>
+    <style>
+        /* Gaya untuk notifikasi */
+        .notification-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-bar button {
+            background-color: white;
+            color: #f44336;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .notification-bar button:hover {
+            background-color: #ffe0e0;
+        }
+
+        /* Gaya untuk GIF */
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Notifikasi -->
+    <div class="notification-bar" id="notificationBar">
+        Maaf, website masih dalam pengembangan nih. Anda akan diarahkan ke halaman <b>Tentang Kami</b> dalam 3 detik.
+        <!-- <button onclick="cancelRedirect()">Tutup</button> -->
+    </div>
+
+    <!-- Konten Halaman -->
+    <div style="padding: 100px 20px;">
+        <h1>Selamat Datang di Website Kami!</h1>
+        <p>Terima kasih telah mengunjungi website ini.</p>
+        <p> Kami sedang bekerja keras untuk memberikan pengalaman terbaik untuk Anda. Mohon bersabar ya!</p>
+    </div>
+
+    <!-- GIF lucu -->
+    <div class="gif-container">
+        <img src="images/pesan.gif" alt="GIF Lucu">
+    </div>
+
+    <!-- Script untuk notifikasi dan pengalihan -->
+    <script>
+        // Fungsi untuk mengarahkan pengguna setelah 3 detik
+        let redirectTimeout = setTimeout(() => {
+            window.location.href = "tentangkami.html";
+        }, 3000);
+
+        // Fungsi untuk membatalkan pengalihan dan menutup notifikasi
+        function cancelRedirect() {
+            clearTimeout(redirectTimeout); // Membatalkan pengalihan
+            const notification = document.getElementById("notificationBar");
+            notification.style.display = "none"; // Menyembunyikan notifikasi
+        }
+    </script>
+
+
+
+    <script>
+                // Mengalihkan pengguna ke URL tanpa ekstensi .html
+                if (window.location.pathname.endsWith('.html')) {
+        var newUrl = window.location.pathname.replace('.html', '');
+        window.history.replaceState(null, null, newUrl);  // Mengganti URL tanpa refresh halaman
+        }
+    </script>
+</body>
+
+</html>
