@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Open Recruitment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 1rem 2rem;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: #fff;
+      table-layout: auto;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f8f9fa;
+    }
+
+    .action-buttons button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      border-radius: 3px;
+    }
+
+    .action-buttons .delete {
+      background-color: #dc3545;
+    }
+
+    .action-buttons button:hover {
+      opacity: 0.9;
+    }
+
+    /* Styling for Select Dropdown */
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+    }
+
+    /* Table Header */
+    th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+
+    /* Table Body */
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #e2e2e2;
+      cursor: pointer;
+    }
+
+    tbody td {
+      font-size: 14px;
+    }
+
+    /* Buttons for actions in the table */
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 14px;
+      border: none;
+      border-radius: 3px;
+      margin: 0.5rem;
+      background-color: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button.delete {
+      background-color: #dc3545;
+    }
+
+    button.delete:hover {
+      background-color: #c82333;
+    }
+
+    button.edit {
+      background-color: #28a745;
+    }
+
+    button.edit:hover {
+      background-color: #218838;
+    }
+
+    /* Responsive Design for Small Screens */
+    @media screen and (max-width: 768px) {
+      table, th, td {
+        font-size: 12px;
+        padding: 0.5rem;
+      }
+
+      th, td {
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      select {
+        width: 100%;
+      }
+    }
+
+    /* Table Responsiveness */
+    @media screen and (max-width: 600px) {
+      table {
+        font-size: 10px;
+      }
+
+      th, td {
+        padding: 0.3rem;
+      }
+
+      th {
+        font-size: 11px;
+      }
+
+      tbody td {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Panel - Open Recruitment</h1>
+  </header>
+  <main>
+    <section>
+        <h2>Ringkasan Pemilihan Divisi</h2>
+        <table id="divisionSummaryTable">
+          <thead>
+            <tr>
+              <th>Divisi</th>
+              <th>Jumlah</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Division summary will be inserted here -->
+          </tbody>
+        </table>
+      </section>
+
+    <section>
+      <h2>Daftar Pendaftaran</h2>
+      <label for="summarySelect">Pilih Ringkasan:</label>
+      <select id="summarySelect" onchange="updateTableBasedOnSelection()">
+        <option value="all">Tampilkan Semua Data</option>
+        <option value="summary1">Nama + No Telp + Semester</option>
+        <option value="summary2">Nama + Semester + Divisi</option>
+        <option value="summary3">Nama + Divisi + Alasan</option>
+        <option value="summary4">Nama + Driverskill</option>
+      </select>
+
+      <table id="participantTable">
+        <thead>
+          <tr>
+            <th>Nomor</th>
+            <th>Email</th>
+            <th>Nama Lengkap</th>
+            <th>Nomor Telepon</th>
+            <th>Semester</th>
+            <th>Prodi</th>
+            <th>Divisi yang diminati</th>
+            <th>Alasan memilih divisi</th>
+            <th>Apakah dapat mengemudikan kendaraan roda 4?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be inserted here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS7HnODG-42qgjHQjEJRWUA98C82A8WiqR8LbdpItIj6V5w2caPqT9HB1OENWETzPqeQobib0y2mjcD/pub?output=csv';
+
+    function csvToArray(csv) {
+      const rows = csv.split("\n");
+      return rows.map(row => row.split(","));
+    }
+
+    function loadData() {
+      fetch(sheetUrl)
+        .then(response => response.text())
+        .then(csvText => {
+          const data = csvToArray(csvText);
+          const tableBody = document.querySelector("#participantTable tbody");
+          const divisionSummary = document.querySelector("#divisionSummaryTable tbody");
+
+          // Clear the existing data
+          tableBody.innerHTML = "";
+          divisionSummary.innerHTML = "";
+
+          // Divisions and their count
+          const divisions = [
+            "Bendahara", "Sekertaris", "Dokumentasi", "Humas Internal", 
+            "Humas Eksternal", "Kewirausahaan", "Perkap", "Publikasi"
+          ];
+          const divisionCount = {};
+
+          divisions.forEach(division => {
+            divisionCount[division] = 0;
+          });
+
+          // Populate the main table and count division selections
+          for (let i = 1; i < data.length; i++) {
+            const row = data[i];
+            const tr = document.createElement("tr");
+
+            const tdNomor = document.createElement("td");
+            tdNomor.textContent = i;
+            tr.appendChild(tdNomor);
+
+            for (let j = 1; j < row.length; j++) {
+              const td = document.createElement("td");
+              td.textContent = row[j].trim();
+              tr.appendChild(td);
+            }
+
+            // Count the division selection
+            const selectedDivision = row[6].trim();
+            if (divisionCount[selectedDivision] !== undefined) {
+              divisionCount[selectedDivision]++;
+            }
+
+            tableBody.appendChild(tr);
+          }
+
+          // Display division summary
+          divisions.forEach(division => {
+            const tr = document.createElement("tr");
+            const tdDivisi = document.createElement("td");
+            tdDivisi.textContent = division;
+            const tdJumlah = document.createElement("td");
+            tdJumlah.textContent = divisionCount[division];
+
+            tr.appendChild(tdDivisi);
+            tr.appendChild(tdJumlah);
+            divisionSummary.appendChild(tr);
+          });
+        })
+        .catch(error => {
+          console.error('Error loading data:', error);
+        });
+    }
+
+    window.onload = loadData;
+
+    function updateTableBasedOnSelection() {
+      const selection = document.getElementById("summarySelect").value;
+      const tableBody = document.querySelector("#participantTable tbody");
+      const tableHeaders = document.querySelectorAll("#participantTable th");
+      const allColumns = tableHeaders.length;
+
+      for (let i = 0; i < allColumns; i++) {
+        tableHeaders[i].style.display = 'none';
+        const rows = tableBody.querySelectorAll("tr");
+        rows.forEach(row => {
+          row.cells[i].style.display = 'none';
+        });
+      }
+
+      if (selection === "all") {
+        for (let i = 0; i < allColumns; i++) {
+          tableHeaders[i].style.display = '';
+          const rows = tableBody.querySelectorAll("tr");
+          rows.forEach(row => {
+            row.cells[i].style.display = '';
+          });
+        }
+      } else if (selection === "summary1") {
+        showColumns([2, 3, 4]); // Nama + No Telp + Semester
+      } else if (selection === "summary2") {
+        showColumns([2, 4, 6]); // Nama + Semester + Divisi
+      } else if (selection === "summary3") {
+        showColumns([2, 6, 7]); // Nama + Divisi + Alasan
+      } else if (selection === "summary4") {
+        showColumns([2, 8]); // Nama + Driverskill
+      }
+    }
+
+    function showColumns(columns) {
+      const tableHeaders = document.querySelectorAll("#participantTable th");
+      const rows = document.querySelectorAll("#participantTable tbody tr");
+
+      columns.forEach(colIndex => {
+        tableHeaders[colIndex].style.display = '';
+        rows.forEach(row => {
+          row.cells[colIndex].style.display = '';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
