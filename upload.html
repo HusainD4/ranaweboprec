@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Foto</title>
+</head>
+<body>
+    <h2>Upload Foto</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="judul">Judul:</label><br>
+        <input type="text" id="judul" name="judul" required><br><br>
+
+        <label for="deskripsi">Deskripsi:</label><br>
+        <textarea id="deskripsi" name="deskripsi" required></textarea><br><br>
+
+        <label for="pembuat">Pembuat:</label><br>
+        <input type="text" id="pembuat" name="pembuat" required><br><br>
+
+        <label for="tahun">Tahun Unggah Foto:</label><br>
+        <input type="number" id="tahun" name="tahun" required><br><br>
+
+        <label for="foto">Pilih Foto:</label><br>
+        <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+        <button type="submit">Unggah Foto</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var formData = new FormData();
+            formData.append('judul', document.getElementById('judul').value);
+            formData.append('deskripsi', document.getElementById('deskripsi').value);
+            formData.append('pembuat', document.getElementById('pembuat').value);
+            formData.append('tahun', document.getElementById('tahun').value);
+            formData.append('foto', document.getElementById('foto').files[0]);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upload', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('message').innerText = 'Foto berhasil diupload!';
+                } else {
+                    document.getElementById('message').innerText = 'Gagal meng-upload foto!';
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
