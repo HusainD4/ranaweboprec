@@ -120,17 +120,6 @@
         }
     </script>
 
-<script>
-
-    // Mengalihkan pengguna ke URL tanpa ekstensi .html
-    if (window.location.pathname.endsWith('.html')) {
-    var newUrl = window.location.pathname.replace('.html', '');
-    window.history.replaceState(null, null, newUrl);  // Mengganti URL tanpa refresh halaman
-    }
-    // Set a timeout to redirect to home.html after 4 seconds
-    setTimeout(function() {
-    window.location.href = "https://rana9.up.railway.app/pendaftaran"; // Redirect to home.html
-}, 1);
 
 
 
