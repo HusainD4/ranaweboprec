@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Maintenance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+
+        .alert {
+            margin-bottom: 20px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+
+        .alert .alert-heading {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .box h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .notification {
+            font-size: 16px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        iframe {
+            width: 100%;
+            height: 1000px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        table td {
+            background-color: #fff;
+        }
+
+        i {
+            margin-right: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            border-radius: 8px;
+        }
+
+        .maintenance-icon {
+            font-size: 50px;
+            color: #f0ad4e;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                height: 300px;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="container">
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Perhatian!</h4>
+        <p class="notification">Maaf, saat ini kami sedang melakukan perbaikan pada server kami. Halaman ini akan segera tersedia kembali. Namun, Anda masih dapat mengakses dan mengisi formulir di bawah ini.</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="box">
+        <h2>Divisi dan Jobdesk</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Divisi</th>
+                    <th>Jobdesk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="fas fa-file-alt"></i> <strong>Sekretaris</strong></td>
+                    <td>Bertanggung jawab dalam pengelolaan administrasi dan surat menyurat.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-wallet"></i> <strong>Bendahara</strong></td>
+                    <td>Mengelola keuangan UKM.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-camera"></i> <strong>Dokumentasi</strong></td>
+                    <td>Mengambil foto dan video untuk dokumentasi kegiatan.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-chalkboard-teacher"></i> <strong>Pendidikan</strong></td>
+                    <td>Mengatur dan melaksanakan kegiatan pelatihan dan pembelajaran.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-briefcase"></i> <strong>KWU</strong></td>
+                    <td>Mengelola kegiatan kewirausahaan dan bisnis di UKM.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-share-alt"></i> <strong>Publikasi</strong></td>
+                    <td>Mengelola media sosial dan publikasi informasi kegiatan UKM.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-cogs"></i> <strong>Perkap (Koordinator Alat dan Properti)</strong></td>
+                    <td>Mengatur dan memastikan peralatan serta properti tersedia dengan baik.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-users"></i> <strong>Humas Eksternal</strong></td>
+                    <td>Menjalin hubungan dengan pihak luar dan komunitas eksternal.</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-users-cog"></i> <strong>Humas Internal</strong></td>
+                    <td>Mengelola hubungan antar anggota UKM dan internal organisasi.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="container">
+    <div class="box">
+        <h2>Silakan isi formulir di bawah ini untuk mendaftar:</h2>
+        <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSce-xaoJoSuSJ7CaWJ2ynxMuzXsWhMuCt1nwSWSJ8xTq9xcZw/viewform?embedded=true"></iframe>
+    </div>
+</section>
+<script>
+
+    // Mengalihkan pengguna ke URL tanpa ekstensi .html
+    if (window.location.pathname.endsWith('.html')) {
+        var newUrl = window.location.pathname.replace('.html', '');
+        window.history.replaceState(null, null, newUrl);  // Mengganti URL tanpa refresh halaman
+    }
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
