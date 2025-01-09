@@ -52,25 +52,60 @@
         <option value="summary3">Nama + Divisi + Alasan</option>
         <option value="summary4">Nama + Driverskill</option>
       </select>
+<section style="
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+  margin: 0 auto;
+}
 
-      <table id="participantTable">
-        <thead>
-          <tr>
-            <th>Nomor</th>
-            <th>Email</th>
-            <th>Nama Lengkap</th>
-            <th>Nomor Telepon</th>
-            <th>Semester</th>
-            <th>Prodi</th>
-            <th>Divisi yang diminati</th>
-            <th>Alasan memilih divisi</th>
-            <th>Apakah dapat mengemudikan kendaraan roda 4?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Rows will be inserted here -->
-        </tbody>
-      </table>
+#participantTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px; /* Minimum width to ensure horizontal scrolling if content overflows */
+}
+
+#participantTable th,
+#participantTable td {
+  text-align: left;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+#participantTable th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+#participantTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#participantTable tr:hover {
+  background-color: #e9ecef;
+}
+
+">
+  <table id="participantTable">
+    <thead>
+      <tr>
+        <th>Nomor</th>
+        <th>Email</th>
+        <th>Nama Lengkap</th>
+        <th>Nomor Telepon</th>
+        <th>Semester</th>
+        <th>Prodi</th>
+        <th>Divisi yang diminati</th>
+        <th>Alasan memilih divisi</th>
+        <th>Apakah dapat mengemudikan kendaraan roda 4?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be inserted here -->
+    </tbody>
+  </table>
+</section>
+
     </section>
   </main>
 
